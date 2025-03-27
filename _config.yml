@@ -1,5 +1,6 @@
 title: 架空のWikipedia
 description: AIによって生成された架空のWikipedia風記事集
+baseurl: "/Wiki-peculiar"  # リポジトリ名を指定
 collections:
   articles:
     output: true

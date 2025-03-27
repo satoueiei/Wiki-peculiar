@@ -5,7 +5,7 @@ layout: default
 
 <ul>
 {% for article in site.articles %}
-  <li><a href="{{ article.url }}">{{ article.title }}</a></li>
+  <li><a href="{{ site.baseurl }}{{ article.url }}">{{ article.title }}</a></li>
 {% endfor %}
 </ul>
 <input type="text" id="search" placeholder="記事を検索...">
