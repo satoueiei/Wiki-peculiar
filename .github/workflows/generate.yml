@@ -2,9 +2,8 @@ name: Generate Article
 
 on:
   schedule:
-    - cron: '0 */1 * * *'  # 毎日0時に実行
+    - cron: '0 */1 * * *'  # 毎時0分に実行（修正: 毎日0時は '0 0 * * *'）
   workflow_dispatch: # 手動実行も可能にする
-
 
 jobs:
   generate:
@@ -16,7 +15,7 @@ jobs:
       with:
         python-version: '3.x'
     - name: Install dependencies
-      run: pip install requests google-generative-ai
+      run: pip install -r requirements.txt
     - name: Run script
       env:
         GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
