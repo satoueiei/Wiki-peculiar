@@ -3,10 +3,8 @@ name: Generate Article
 on:
   schedule:
     - cron: '0 */1 * * *'  # 毎日0時に実行
-<<<<<<< HEAD
   workflow_dispatch: # 手動実行も可能にする
-=======
->>>>>>> 7d90a3c703ed41c1144c1591ec2c8f8293878be4
+
 
 jobs:
   generate:
