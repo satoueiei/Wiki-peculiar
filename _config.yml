@@ -1,0 +1,6 @@
+title: 架空のWikipedia
+description: AIによって生成された架空のWikipedia風記事集
+collections:
+  articles:
+    output: true
+    permalink: /articles/:name/
