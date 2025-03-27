@@ -1,0 +1,28 @@
+name: Generate Article
+
+on:
+  schedule:
+    - cron: '0 ・ * * *'  # 毎日0時に実行
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: pip install requests google-generative-ai
+    - name: Run script
+      env:
+        GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      run: python generate_article.py
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add .
+        git commit -m "新しい架空記事を追加" || echo "変更なし"
+        git push
