@@ -71,8 +71,8 @@ content = '\n'.join(lines[1:]).strip()      # 本文を抽出
 
 prompt3=f"以下の文章は、Wikipedia風な文章ですか？　「申し訳ありませんが、そのような内容の文章を作ることはできません」のように、AIがユーザーのプロンプトにたいして回答を拒否するようにはなっていませんか？　Wikipedia風の文章になっていると思った場合、「Y」、そうではなく、回答を拒否しているように見えたら「N」とだけ、答えてください。\n「{response2.text}」"
 
-response3 = model.generate_content(prompt3)
-
+#response3 = model.generate_content(prompt3)
+response3="skipped"
 # 応答に基づいて条件分岐
 if "N" in response3.text:
     print("記事の生成が拒否されました。ファイルは作成されません。")
