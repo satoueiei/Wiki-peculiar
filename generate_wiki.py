@@ -74,7 +74,7 @@ prompt3=f"以下の文章は、Wikipedia風な文章ですか？　「申し訳�
 #response3 = model.generate_content(prompt3)
 response3="skipped"
 # 応答に基づいて条件分岐
-if "N" in response3.text:
+if "N" in response3:
     print("記事の生成が拒否されました。ファイルは作成されません。")
 else:
     timestamp = int(time.time())
