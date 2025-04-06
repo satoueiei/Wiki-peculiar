@@ -1,21 +1,82 @@
 body {
-    font-family: Arial, sans-serif;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  header {
-    border-bottom: 1px solid #ccc;
-    margin-bottom: 20px;
-  }
-  h1 {
-    font-size: 24px;
-  }
-  article {
-    line-height: 1.6;
-  }
-  footer {
-    margin-top: 20px;
-    font-size: 12px;
-    color: #666;
-  }
+  font-family: sans-serif;
+  margin: 20px;
+  line-height: 1.6;
+  color: #333;
+}
+
+h1 {
+  font-size: 2em;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5em;
+  margin-bottom: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+a {
+  color: #007bff; /* Wikipediaのリンク色に近い青 */
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+input[type="text"] {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  width: 300px; /* 検索ボックスの幅を調整 */
+}
+
+#results {
+  list-style: none;
+  padding: 0;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+  display: none; /* 初期状態では非表示 */
+}
+
+#results li {
+  padding: 8px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+#results li:last-child {
+  border-bottom: none; /* 最後の項目は下線を消す */
+}
+
+#results li:hover {
+  background-color: #f0f0f0; /* ホバー時の背景色 */
+}
+
+#results li a {
+  display: block; /* リンクをli要素全体に広げる */
+  color: #333; /* 検索結果のリンク色 */
+}
+
+a[href="/random"] {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  text-decoration: none;
+}
+
+a[href="/random"]:hover {
+  background-color: #e0e0e0;
+}
