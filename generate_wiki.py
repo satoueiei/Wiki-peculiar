@@ -188,6 +188,7 @@ categories = [
     "リゾート施設", "ナイトライフ", "カジノ", "ショッピングモール"
 ]
 random_category=random.choice(categories)
+length=["長め","普通の長さ","短め"]
 summary="」\n「".join(query)
 prompt=f"あなたは優れた創作能力を持つマシンです。以下に、複数個のWikipedia記事の「要約」部分を載せますので、あなたの好きなように組み合わせたり手直ししたりして、「{random_category}」カテゴリに関連する、オリジナリティあふれる架空のWikipedia風の要約を生成してみて。ただし、アイデアは一つだけ作るのと、回答は作り出した要約部分だけにすることを絶対に守ってください。\n「{summary}」"
 
@@ -199,7 +200,7 @@ print(prompt+"\n")
 response=model.generate_content(prompt)
 print(response.text)
 
-prompt2 = f"あなたは優れた創作能力を持つマシンです。以下に、「{random_category}」に関連するオリジナルのWikipedia記事の要約を載せるので、それをもとに世界観を広げ、「{random_category}」カテゴリに関連するオリジナルのWikipedia風の記事を作成してください。記事の先頭に「# タイトル」という形式でタイトルを含め、その後に本文を続けてください。回答は作り出したWikipedia記事の部分だけにすること、生成されるコンテンツが架空であることはサイトで明示するので「架空であることを示唆する表現を入れない」こと、この二つを絶対に守ってください。\n「{response.text}」"
+prompt2 = f"あなたは優れた創作能力を持つマシンです。以下に、「{random_category}」に関連するオリジナルのWikipedia記事の要約を載せるので、それをもとに世界観を広げ、{random.choice(length)}のオリジナルのWikipedia風の記事を作成してください。記事の先頭に「# タイトル」という形式でタイトルを含め、その後に本文を続けてください。回答は作り出したWikipedia記事の部分だけにすること、生成されるコンテンツが架空であることはサイトで明示するので「架空であることを示唆する表現を入れない」こと、この二つを絶対に守ってください。\n「{response.text}」"
 response2=model.generate_content(prompt2)
 print(response2.text)
 
